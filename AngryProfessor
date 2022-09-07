@@ -1,0 +1,9 @@
+char* angryProfessor(int k, int a_count, int* a) {
+    int say=0;
+    for(int i=0; i<a_count; i++)
+    {
+        if(a[i] <= 0) say++;
+    }
+    if(say>=k) return "NO";
+    else return "YES";
+}

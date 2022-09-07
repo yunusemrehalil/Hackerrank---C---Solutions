@@ -1,0 +1,12 @@
+int pairs(int k, int arr_count, int* arr) {
+    int say=0;
+    for(int i=0; i<arr_count; i++)
+    {
+        for(int j=i+1; j<arr_count; j++)
+        {
+            if(abs(arr[i]-arr[j])==k) say++;
+        }
+    }
+    return say;
+    
+}

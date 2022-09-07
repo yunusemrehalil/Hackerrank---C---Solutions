@@ -1,0 +1,22 @@
+int* icecreamParlor(int m, int arr_count, int* arr, int* result_count) {
+    *result_count = 2;
+    
+    result_count = malloc(2*sizeof(int));
+    int tut, tut2;
+    for(int i=0; i<arr_count; i++)
+    {
+        for(int j=i+1; j<arr_count; j++)
+        {
+            if(arr[i] + arr[j] ==m ) 
+            {
+               // result_count[i+1] = j+1;
+                tut = i+1;
+                tut2 = j+1;
+                break;
+            }
+        }
+    }
+    result_count[0] = tut;
+    result_count[1] = tut2;
+    return result_count; 
+}

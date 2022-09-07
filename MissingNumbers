@@ -1,0 +1,50 @@
+int* missingNumbers(int arr_count, int* arr, int brr_count, int* brr, int* result_count) {
+    int boyut = brr_count-arr_count;
+    *result_count = boyut;
+    result_count = malloc((boyut) * sizeof(int));
+    int check=0, say=0;
+    int temp;
+    for(int i=0; i<arr_count; i++)
+    {
+        for(int j=i+1; j<arr_count; j++)
+        {
+            if(arr[i] > arr[j])
+            {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    
+    for(int i=0; i<brr_count; i++)
+    {
+        for(int j=i+1; j<brr_count; j++)
+        {
+            if(brr[i] > brr[j])
+            {
+                temp = brr[i];
+                brr[i] = brr[j];
+                brr[j] = temp;  
+            }
+        }
+    }
+    int k=0;
+    for(int i=0; i<=arr_count; i++)
+    {
+        if(arr[k]==brr[check])
+        {
+            check++;
+            k++;    
+        }
+        else 
+        {
+            result_count[say] = brr[check];
+            say++;
+            check++;
+            //k--;
+        }
+        
+    }
+    return result_count;
+}

@@ -1,0 +1,28 @@
+int designerPdfViewer(int h_count, int* h, char* word) {
+    char alfabe[h_count];
+    int k=0,tut[h_count], enbuyuk=0;
+    for(char i='a'; i<='z'; i++)
+    {
+        alfabe[k] = i;
+        k++; 
+    }
+    
+    for(int i=0; i<h_count; i++)
+    {
+        for(int j=0; j<h_count; j++)
+        {
+            if(word[i] == alfabe[j])
+            {
+                tut[i] = h[j];
+            }
+        }
+    }
+    for(int i=0; i<strlen(word); i++)
+    {
+        if(tut[i]>=enbuyuk)
+        {
+            enbuyuk = tut[i];
+        }
+    }
+    return enbuyuk*strlen(word);
+}

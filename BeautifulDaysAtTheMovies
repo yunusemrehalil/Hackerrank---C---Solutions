@@ -1,0 +1,17 @@
+int beautifulDays(int i, int j, int k) {
+    int result=0, c= j-i+1, reverse=0, kalan;
+    for(int a=0; a<c; a++)
+    {          
+        while(i !=0)
+        {
+            kalan = i %10;
+            reverse = (reverse*10)+kalan;
+            i = i/10;
+        }
+        i= j-c+a;
+        if((i-reverse) % k ==0) result++;
+        reverse = 0;
+        i++;
+    }
+        return result;
+}

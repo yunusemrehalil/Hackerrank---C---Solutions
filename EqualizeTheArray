@@ -1,0 +1,27 @@
+int equalizeArray(int arr_count, int* arr) {    
+    int cod[arr_count], min=999;
+    for(int i=0; i<arr_count; i++)
+    {
+        cod[i] =0 ;
+    }
+    for(int i=0; i<arr_count; i++)
+    {
+        for(int j=0; j<arr_count; j++)
+        {
+            if(i==j) continue;
+            if(arr[i] != arr[j]) cod[i]++; // 1 2 3 1 2 3 3 3
+        }
+    }
+    for(int i=0; i<arr_count; i++)
+    {
+        for(int j=i+1; j<arr_count; j++)
+        {
+            if(cod[i]>cod[j])
+            {
+                int temp = cod[i];
+                cod[i] = cod[j];
+                cod[j] = temp;
+            }
+        }
+    }
+    return cod[0];

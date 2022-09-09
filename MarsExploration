@@ -1,0 +1,15 @@
+int marsExploration(char* s) {      //S -- 0,2,3,5,6,8,9...
+    int hata=0;                     //O -- 1,4,7,10...
+    for(int i=0; i<strlen(s); i++) 
+    {                              
+        if(i%3 ==0 || i%3==2)
+        {
+            if(s[i] != 'S') hata++;
+        }
+        else if(i%3 == 1)
+        {
+            if(s[i] !='O') hata++;
+        }
+    }   
+    return hata;
+}

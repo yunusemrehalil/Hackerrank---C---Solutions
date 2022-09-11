@@ -1,0 +1,20 @@
+char* superReducedString(char* s) {
+    char *a = malloc(strlen(s) * sizeof(char));
+    int count =0;
+    for(int i=0; i<strlen(s); i++)
+    {
+        if(s[i] == s[i+1])
+        {
+            s[i] ='0';
+            s[i+1] = '0';
+        }
+    }
+    int k=0;
+    for(int i=0; i<strlen(s); i++)
+    {
+        if(s[i] =='0') {count++; continue;}
+        else {a[k] = s[i]; k++;}
+    }
+    if(count==strlen(s)) return "Empty String";
+    return a;
+}

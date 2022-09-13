@@ -1,0 +1,33 @@
+char* funnyString(char* s) {
+    char *result = malloc(10 * sizeof(char));
+    char *result1 = malloc(10 * sizeof(char));
+    result = "Funny";
+    result1 = "Not Funny";
+    int size = strlen(s), k = size, j = size, count=0;
+    int *fark = malloc(size*2 * sizeof(int));
+    int *reverse = malloc(size*2 * sizeof(int));
+    for(int i=0; i<size; i++)
+    {
+        reverse[i] = s[i];
+        reverse[k] = s[j-i-1];
+        k++;
+    }
+    for(int i=0; i<=size*2-2; i++)
+    {
+        if (i == size-1) continue;
+        if(i<size-1)
+        {
+            fark[i] = abs(reverse[i]-reverse[i+1]);
+        }
+        else 
+        {
+            fark[i] = abs(reverse[i]-reverse[i+1]);
+        }
+    }    
+    for(int i=0; i<size; i++)
+    {
+        if(fark[i]==fark[i+size]) count++;
+    }
+    if(count == size) return result;
+    else return result1;
+}
